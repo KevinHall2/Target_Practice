@@ -1,26 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
 
 public class TargetShooter : MonoBehaviour
 {
     [SerializeField]
-    Camera cam;
+    Camera _cam;
 
     [SerializeField]
-    private TextMeshProUGUI gameScoreUI;
+    private TextMeshProUGUI _gameScoreUI;
 
-    private int startingScore = 0;
-    private int gameScoreCount;
+    private int _startingScore = 0;
+    private int _gameScoreCount;
+
+    public int GameScoreCount { get { return _gameScoreCount; } }
 
     private void Start()
     {
-        gameScoreCount = startingScore;
+        _gameScoreCount = _startingScore;
 
-        if (gameScoreUI)
+        if (_gameScoreUI)
         {
-            gameScoreUI.text = gameScoreCount.ToString();
+            _gameScoreUI.text = _gameScoreCount.ToString();
         }
     }
 
@@ -29,7 +32,7 @@ public class TargetShooter : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             //Fires at whatever the camera is pointing at
-            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            Ray ray = _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
             if(Physics.Raycast(ray, out RaycastHit hit))
             {
@@ -39,16 +42,16 @@ public class TargetShooter : MonoBehaviour
                 if(target != null)
                 {
                     target.Hit();
-                    gameScoreCount++;
+                    _gameScoreCount++;
                 }
             }
         }
 
-        if(gameScoreUI)
+        if(_gameScoreUI)
         {
-            gameScoreUI.text = gameScoreCount.ToString();
+            _gameScoreUI.text = _gameScoreCount.ToString();
         }
 
-        Debug.Log(gameScoreUI == null);
+        Debug.Log(_gameScoreUI == null);
     }
 }

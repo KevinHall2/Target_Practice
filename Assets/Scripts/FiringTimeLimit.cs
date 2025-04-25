@@ -6,30 +6,32 @@ using UnityEngine;
 public class FiringTimeLimit : MonoBehaviour
 {
     [SerializeField]
-    private float startingTime = 30.0f;
+    private float _startingTime = 30.0f;
 
     [SerializeField]
-    private TextMeshProUGUI timerText;
+    private TextMeshProUGUI _timerText;
 
-    private float timeRemaining;
+    private float _timeRemaining;
+
+    public float TimeRemaining { get { return _timeRemaining; } }
 
     private void Start()
     {
-        timeRemaining = startingTime;
-        if(timerText)
+        _timeRemaining = _startingTime;
+        if(_timerText)
         {
-            timerText.text = timeRemaining.ToString("0.0");
+            _timerText.text = _timeRemaining.ToString("0.0");
         }
     }
 
     private void Update()
     {
-        timeRemaining -= Time.deltaTime;
-        timeRemaining = Mathf.Clamp(timeRemaining, 0, startingTime);
+        _timeRemaining -= Time.deltaTime;
+        _timeRemaining = Mathf.Clamp(_timeRemaining, 0, _startingTime);
 
-        if (timerText)
+        if (_timerText)
         {
-            timerText.text = timeRemaining.ToString("0.0");
+            _timerText.text = _timeRemaining.ToString("0.0");
         }
     }
 }
