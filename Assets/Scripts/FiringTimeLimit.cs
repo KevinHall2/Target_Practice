@@ -22,6 +22,7 @@ public class FiringTimeLimit : MonoBehaviour
         {
             _timerText.text = _timeRemaining.ToString("0.0");
         }
+        Debug.Log(_timeRemaining);
     }
 
     private void Update()
@@ -33,5 +34,7 @@ public class FiringTimeLimit : MonoBehaviour
         {
             _timerText.text = _timeRemaining.ToString("0.0");
         }
+        Debug.Log(_timerText == null);
+        Debug.Log(_timeRemaining);
     }
 }

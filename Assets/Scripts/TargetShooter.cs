@@ -51,7 +51,5 @@ public class TargetShooter : MonoBehaviour
         {
             _gameScoreUI.text = _gameScoreCount.ToString();
         }
-
-        Debug.Log(_gameScoreUI == null);
     }
 }

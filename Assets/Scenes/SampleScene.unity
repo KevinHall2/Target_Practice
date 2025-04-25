@@ -738,7 +738,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -837,8 +837,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2818cba25cabd1349b040a263bfc24bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 963194227}
-  gameScoreUI: {fileID: 3807633594757006832, guid: 50f723478ef315f4bb284ae93e937887, type: 3}
+  _cam: {fileID: 963194227}
+  _gameScoreUI: {fileID: 3807633594757006832, guid: 50f723478ef315f4bb284ae93e937887, type: 3}
 --- !u!114 &1115481613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1138,6 +1138,14 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 3026213082153869381, guid: 50f723478ef315f4bb284ae93e937887, type: 3}
+      propertyPath: _cam
+      value: 
+      objectReference: {fileID: 963194227}
+    - target: {fileID: 3026213082153869381, guid: 50f723478ef315f4bb284ae93e937887, type: 3}
+      propertyPath: _gameScoreUI
+      value: 
+      objectReference: {fileID: 3807633594757006832, guid: 50f723478ef315f4bb284ae93e937887, type: 3}
     - target: {fileID: 8726084878196293151, guid: 50f723478ef315f4bb284ae93e937887, type: 3}
       propertyPath: m_Name
       value: ScoreTracker
@@ -1159,6 +1167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIringTImeLimit (TMP)
       objectReference: {fileID: 0}
+    - target: {fileID: 2081599478429091203, guid: 8159f44f7d6a72f4a99f4824aa465ec8, type: 3}
+      propertyPath: _timerText
+      value: 
+      objectReference: {fileID: 7488529875541169518, guid: 8159f44f7d6a72f4a99f4824aa465ec8, type: 3}
     - target: {fileID: 8419892728388424156, guid: 8159f44f7d6a72f4a99f4824aa465ec8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
